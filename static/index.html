@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>AI Branding Assistant</title>
+    <meta name="description" content="Transform your ideas into powerful brands using AI.">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <section id="welcome-screen" class="view active">
+        <div class="glass-container">
+            <h1>Welcome to <br><span>AI Branding Assistant</span></h1>
+            <p>Transform your ideas into powerful brands using AI.</p>
+            <ul class="features">
+                <li>✅ Brand Name</li>
+                <li>✅ Logo Prompt</li>
+                <li>✅ Slogan</li>
+                <li>✅ Caption</li>
+                <li>✅ Hashtags</li>
+                <li>✅ Brand Colors</li>
+                <li>✅ Marketing Strategy</li>
+                <li>✅ Social Media Post</li>
+            </ul>
+            <button id="start-btn" class="glow-on-hover">Start Journey</button>
+        </div>
+    </section>
+
+    <!-- Generator Screen -->
+    <section id="generator-screen" class="view hidden">
+        <div class="glass-container large">
+            <h2>Create Your Brand</h2>
+            <div class="input-group">
+                <input type="text" id="product-idea" placeholder="Enter your product idea (e.g., Eco-friendly coffee cups)">
+                <button id="generate-btn" class="glow-on-hover">Generate Branding ✨</button>
+            </div>
+            
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Generating magic...</p>
+            </div>
+            
+            <div id="result-container" class="hidden">
+                <div id="branding-content"></div>
+                <button id="download-btn" class="glow-on-hover secondary hidden">📄 Download PDF Report</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget">
+        <div id="chatbot-header" class="glass-header">
+            <h3>💬 Branding Chatbot</h3>
+            <button id="chat-toggle">_</button>
+        </div>
+        <div id="chatbot-body" class="hidden">
+            <div id="chat-messages">
+                <div class="message ai">Hi! I'm your AI branding expert. Ask me anything!</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button id="chat-send">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
