@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, send_from_directory, send_file
+import git
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
@@ -126,12 +127,7 @@ def chat():
 import threading
 import webbrowser
 
-if __name__ == '__main__':
-    port = 5000
-    url = f"http://127.0.0.1:{port}"
-    
-    # Only open browser once when the server starts (ignore reloader restarts)
-    if os.environ.get('WERKZEUG_RUN_MAIN') != 'true':
-        threading.Timer(1.25, lambda: webbrowser.open(url)).start()
-        
-    app.run(debug=True, port=port)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
